@@ -4,10 +4,10 @@ import '../../app_colors.dart';
 
 class Day extends StatefulWidget {
   final id;
-  final color;
+  final date;
   Day({
     @required this.id,
-    this.color
+    this.date,
   });
 
   @override
@@ -30,7 +30,8 @@ class _DayState extends State<Day> with AutomaticKeepAliveClientMixin {
         child: Wave(
           id: widget.id,
           color: AppColors.PRIMARY_DARK,
-          size: Size(150, 300),
+          size: Size(115, 275),
+          date: widget.date,
         ),
       ),
 

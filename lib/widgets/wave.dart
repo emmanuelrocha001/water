@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import '../widgets/clipper.dart';
 import '../app_colors.dart';
@@ -7,11 +8,13 @@ import 'dart:math' as Math;
 class Wave extends StatefulWidget {
   final Size size;
   final Color color;
+  final date;
   final id;
   Wave({
     @required this.size,
     @required this.color,
     @required this.id,
+    this.date,
   });
 
   @override
@@ -90,9 +93,19 @@ class _WaveState extends State<Wave> with TickerProviderStateMixin{
 
     final styleTheme = Theme.of(context);
     return Container(
-      height: 400,
+      height: 500,
       child: Column(
         children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              width: 300,
+              child: ListTile(
+                title: Text(DateFormat.E().format(widget.date), style: TextStyle(color: Colors.white),),
+                subtitle: Text(DateFormat('M/d').format(widget.date), style: TextStyle(color: Colors.white),),
+              ),
+            ),
+          ),
           Container(
             decoration: BoxDecoration(
               color: AppColors.SECONDARY_DARK,
@@ -103,24 +116,34 @@ class _WaveState extends State<Wave> with TickerProviderStateMixin{
 
               borderRadius: BorderRadius.circular(10)
             ),
-            child: AnimatedBuilder(
-              animation: _controller,
-              builder: (context, child) {
-                return ClipPath(
-                  key: ValueKey(widget.id),
-                  clipper: Clipper(
-                      waveList: _wavePoints
-                    ),
-                    child: AnimatedContainer(
-                        duration: Duration(seconds: 1),
-                        color: Colors.blue,
-                        width: widget.size.width,
-                        height: widget.size.height,
-                    ),
-                );
-              },
+            child: Stack(
+              children: [
+                AnimatedBuilder(
+                  animation: _controller,
+                  builder: (context, child) {
+                    return ClipPath(
+                      key: ValueKey(widget.id),
+                      clipper: Clipper(
+                          waveList: _wavePoints
+                        ),
+                        child: AnimatedContainer(
+                            duration: Duration(seconds: 1),
+                            color: Colors.blue,
+                            width: widget.size.width,
+                            height: widget.size.height,
+                        ),
+                    );
+                  },
 
-              ),
+                ),
+                Container(
+                  width: widget.size.width,
+                  height: widget.size.height,
+                  alignment: Alignment.center,
+                  child: Icon(Feather.droplet, color: Colors.white.withOpacity(.75), size: 32,)
+                ),
+              ],
+            ),
 
           ),
           Container(
