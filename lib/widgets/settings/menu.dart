@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import '../../screens/authentication_screen.dart';
 import './color_picker.dart';
+import './goal_input.dart';
+
 class Menu extends StatelessWidget {
 
   void _logOut(BuildContext context) {
@@ -37,7 +39,7 @@ class Menu extends StatelessWidget {
           title: ColorPicker()
         ),
         SizedBox(height: 30,),
-
+        GoalInput(),
 
         FlatButton(
           onPressed: () {
