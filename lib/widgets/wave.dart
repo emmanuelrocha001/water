@@ -128,7 +128,7 @@ class _WaveState extends State<Wave> with TickerProviderStateMixin{
                         ),
                         child: AnimatedContainer(
                             duration: Duration(seconds: 1),
-                            color: Colors.blue,
+                            color: styleTheme.primaryColor,
                             width: widget.size.width,
                             height: widget.size.height,
                         ),

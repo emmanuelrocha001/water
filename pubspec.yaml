@@ -24,8 +24,10 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_vector_icons: ^0.2.1
+  flushbar: ^1.10.4
   http: ^0.12.1
   intl: ^0.16.1
+  provider: ^4.1.2
 
 
   # The following adds the Cupertino Icons font to your application.

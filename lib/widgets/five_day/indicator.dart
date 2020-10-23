@@ -16,7 +16,7 @@ class Indicator extends StatelessWidget {
     return Container(
       // color: Colors.red,
       width: size*5,
-      height: 100,
+      height: 80,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: 5,
