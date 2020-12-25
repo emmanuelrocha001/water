@@ -1,10 +1,9 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:water_tracker/app_colors.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import '../../screens/overview_screen.dart';
-import '../general/loading.dart';
-
+import '../../widgets/general/loading.dart';
+import '../../general/app_colors.dart';
 
 class SignIn extends StatefulWidget {
   @override
@@ -12,12 +11,9 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
-
-
   final _formKey = GlobalKey<FormState>();
   var _hidePassword = true;
   var _loading = false;
-
 
   void _login() {
     setState(() {
@@ -28,12 +24,10 @@ class _SignInState extends State<SignIn> {
 
   @override
   Widget build(BuildContext context) {
-
     final styleTheme = Theme.of(context);
     final mediaQuery = MediaQuery.of(context);
 
     return Center(
-
       child: SingleChildScrollView(
         child: Container(
           // color: Colors.red,
@@ -42,7 +36,6 @@ class _SignInState extends State<SignIn> {
 
           child: Form(
             key: _formKey,
-
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -63,7 +56,9 @@ class _SignInState extends State<SignIn> {
                       ),
                     ),
 
-                    SizedBox(height: 30,),
+                    SizedBox(
+                      height: 30,
+                    ),
 
                     // email field
                     TextFormField(
@@ -77,13 +72,13 @@ class _SignInState extends State<SignIn> {
                         ),
                         hintText: 'Email',
                         isDense: true,
-
                         hintStyle: TextStyle(
                           color: Colors.white,
                         ),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
-                          borderSide: BorderSide(color: styleTheme.primaryColor),
+                          borderSide:
+                              BorderSide(color: styleTheme.primaryColor),
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
@@ -92,8 +87,9 @@ class _SignInState extends State<SignIn> {
                       ),
                     ),
 
-                    SizedBox(height: 15,),
-
+                    SizedBox(
+                      height: 15,
+                    ),
 
                     // password field
                     TextFormField(
@@ -124,7 +120,8 @@ class _SignInState extends State<SignIn> {
                         ),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
-                          borderSide: BorderSide(color: styleTheme.primaryColor),
+                          borderSide:
+                              BorderSide(color: styleTheme.primaryColor),
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
@@ -134,40 +131,38 @@ class _SignInState extends State<SignIn> {
                     ),
                   ],
                 ),
-
-                SizedBox(height: 15,),
-
+                SizedBox(
+                  height: 15,
+                ),
                 Container(
                   decoration: BoxDecoration(
                     color: AppColors.SECONDARY_DARK,
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: ListTile(
-
                     title: FlatButton(
                       shape: RoundedRectangleBorder(
                         // side: BorderSide(color: Colors.white70, width: 1),
                         borderRadius: BorderRadius.circular(8),
                       ),
-
-                      child: _loading ? Padding(
-                        padding: const EdgeInsets.all(0.0),
-                        child: Loading(),
-                      ) :
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Text('Login', style: TextStyle(color: Colors.white),),
-                        ),
-
+                      child: _loading
+                          ? Padding(
+                              padding: const EdgeInsets.all(0.0),
+                              child: Loading(),
+                            )
+                          : Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Text(
+                                'Login',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ),
                       onPressed: () {
                         _login();
                       },
                     ),
                   ),
                 )
-
-
-
               ],
             ),
           ),

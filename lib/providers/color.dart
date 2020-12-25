@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AppColor with ChangeNotifier{
-
+class AppColor with ChangeNotifier {
   var _appColor = Colors.blue;
   var _colorIndex = 0;
 
@@ -26,7 +25,6 @@ class AppColor with ChangeNotifier{
     Colors.pink,
   ];
 
-
   Color get appColor {
     return _appColor;
   }
@@ -39,11 +37,9 @@ class AppColor with ChangeNotifier{
     return [..._colors];
   }
 
-
   void setColor(int index) {
     _appColor = _colors[index];
     _colorIndex = index;
     notifyListeners();
   }
-
 }

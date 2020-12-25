@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../wave.dart';
-import '../../app_colors.dart';
+import '../../general/app_colors.dart';
 
 class Day extends StatefulWidget {
   final id;
@@ -15,7 +15,6 @@ class Day extends StatefulWidget {
 }
 
 class _DayState extends State<Day> with AutomaticKeepAliveClientMixin {
-
   @override
   bool get wantKeepAlive {
     return true;
@@ -34,7 +33,6 @@ class _DayState extends State<Day> with AutomaticKeepAliveClientMixin {
           date: widget.date,
         ),
       ),
-
     );
   }
 }

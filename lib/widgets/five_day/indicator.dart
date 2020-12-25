@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import '../../app_colors.dart';
+import '../../general/app_colors.dart';
 
 class Indicator extends StatelessWidget {
   final currentIndex;
-  Indicator({
-    @required this.currentIndex
-  });
-
+  Indicator({@required this.currentIndex});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +12,7 @@ class Indicator extends StatelessWidget {
 
     return Container(
       // color: Colors.red,
-      width: size*5,
+      width: size * 5,
       height: 80,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
@@ -26,18 +23,18 @@ class Indicator extends StatelessWidget {
             height: size,
             alignment: Alignment.center,
             child: Container(
-              width: size/2,
-              height: size/2,
+              width: size / 2,
+              height: size / 2,
               decoration: BoxDecoration(
-                color: index==currentIndex ? Colors.white : Colors.white.withOpacity(.25),
+                color: index == currentIndex
+                    ? Colors.white
+                    : Colors.white.withOpacity(.25),
                 shape: BoxShape.circle,
               ),
             ),
           );
         },
-
       ),
-
     );
   }
 }
