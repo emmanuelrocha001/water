@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AppColor with ChangeNotifier {
+  static const Color PRIMARY_DARK = Color(0xFF494949);
+  static const Color SECONDARY_DARK = Color(0xFF5B5B5B);
   var _appColor = Colors.blue;
   var _colorIndex = 0;
 

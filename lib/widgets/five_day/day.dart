@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../wave.dart';
-import '../../general/app_colors.dart';
+// colors
+import '../../providers/app_color.dart';
 
 class Day extends StatefulWidget {
   final id;
@@ -23,12 +24,12 @@ class _DayState extends State<Day> with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppColors.PRIMARY_DARK,
+      color: AppColor.PRIMARY_DARK,
       alignment: Alignment.center,
       child: Container(
         child: Wave(
           id: widget.id,
-          color: AppColors.PRIMARY_DARK,
+          color: AppColor.PRIMARY_DARK,
           size: Size(115, 275),
           date: widget.date,
         ),

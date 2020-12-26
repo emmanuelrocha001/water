@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import '../../providers/auth.dart';
 import 'package:flutter/material.dart';
 // widgets
+import '../widgets/auth_view_swicher.dart';
 import '../../general/date_picker.dart';
 import '../../general/logo.dart';
 import '../widgets/create_account_input.dart';
@@ -15,7 +16,7 @@ import '../../data_types/response.dart';
 // configs
 import '../../general/text_style_configs.dart';
 // colors
-import '../../general/app_colors.dart';
+import '../../providers/app_color.dart';
 // helper
 import '../../helper.dart';
 
@@ -82,7 +83,7 @@ class _CreateAccountViewState extends State<CreateAccountView> {
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
     return Scaffold(
-      backgroundColor: AppColors.SECONDARY_DARK,
+      backgroundColor: AppColor.SECONDARY_DARK,
       body: SafeArea(
         child: Center(
           child: Container(
@@ -129,6 +130,9 @@ class _CreateAccountViewState extends State<CreateAccountView> {
             ),
           ),
         ),
+      ),
+      bottomNavigationBar: AuthViewSwitcher(
+        hasAccount: false,
       ),
     );
   }

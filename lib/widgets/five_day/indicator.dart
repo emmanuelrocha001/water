@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../general/app_colors.dart';
 
 class Indicator extends StatelessWidget {
   final currentIndex;

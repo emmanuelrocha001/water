@@ -1,7 +1,7 @@
 import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../providers/color.dart';
+import '../providers/app_color.dart';
 // widgets
 import 'action_button.dart';
 import 'left_label.dart';
@@ -25,7 +25,6 @@ class _DatePickerState extends State<DatePicker> {
           builder: (context, color, _) => Theme(
             data: ThemeData(
               primarySwatch: color.appColor,
-              // accentColor: Colors.black,
               brightness: Brightness.dark,
               visualDensity: VisualDensity.adaptivePlatformDensity,
             ),

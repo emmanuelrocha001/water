@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import '../widgets/clipper.dart';
-import '../general/app_colors.dart';
+// colors
+import '../providers/app_color.dart';
 
 import 'dart:math' as Math;
 
@@ -107,9 +108,9 @@ class _WaveState extends State<Wave> with TickerProviderStateMixin {
           ),
           Container(
             decoration: BoxDecoration(
-                color: AppColors.SECONDARY_DARK,
+                color: AppColor.SECONDARY_DARK,
                 border: Border.all(
-                  color: AppColors.SECONDARY_DARK,
+                  color: AppColor.SECONDARY_DARK,
                   width: 10,
                 ),
                 borderRadius: BorderRadius.circular(10)),

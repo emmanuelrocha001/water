@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 // widget
 import 'loading.dart';
 // colors
-import 'app_colors.dart';
 
 class ActionButton extends StatelessWidget {
   final Function function;

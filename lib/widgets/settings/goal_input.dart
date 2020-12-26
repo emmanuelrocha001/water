@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
-import '../../general/app_colors.dart';
+// colors
+import '../../providers/app_color.dart';
 
 class GoalInput extends StatefulWidget {
   @override
@@ -31,7 +32,7 @@ class _GoalInputState extends State<GoalInput> {
                         color: Colors.white,
                       )),
                   decoration: BoxDecoration(
-                    color: AppColors.SECONDARY_DARK,
+                    color: AppColor.SECONDARY_DARK,
                     borderRadius: BorderRadius.circular(8),
                   ),
                 ),
@@ -61,7 +62,7 @@ class _GoalInputState extends State<GoalInput> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
-                          color: AppColors.SECONDARY_DARK,
+                          color: AppColor.SECONDARY_DARK,
                           margin: EdgeInsets.all(8.0),
                           child: FlatButton(
                             child: Text('CANCEL',

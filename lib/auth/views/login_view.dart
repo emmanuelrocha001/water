@@ -6,13 +6,14 @@ import 'package:flutter/material.dart';
 import '../../general/logo.dart';
 import '../widgets/login_input.dart';
 import '../../general/action_button.dart';
+import '../widgets/auth_view_swicher.dart';
 // data types
 import '../../data_types/login_data.dart';
 import '../../data_types/response.dart';
 // configs
 import '../../general/text_style_configs.dart';
 // colors
-import '../../general/app_colors.dart';
+import '../../providers/app_color.dart';
 // helper
 import '../../helper.dart';
 
@@ -69,7 +70,7 @@ class _LoginViewState extends State<LoginView> {
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
     return Scaffold(
-      backgroundColor: AppColors.SECONDARY_DARK,
+      backgroundColor: AppColor.SECONDARY_DARK,
       body: SafeArea(
         child: Center(
           child: Container(
@@ -107,6 +108,9 @@ class _LoginViewState extends State<LoginView> {
             ),
           ),
         ),
+      ),
+      bottomNavigationBar: AuthViewSwitcher(
+        hasAccount: true,
       ),
     );
   }

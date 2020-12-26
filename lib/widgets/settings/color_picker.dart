@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../providers/color.dart';
+import '../../providers/app_color.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
-import '../../general/app_colors.dart';
+// colors
+import '../../providers/app_color.dart';
 
 import 'dart:math';
 
@@ -37,7 +38,7 @@ class _ColorPickerState extends State<ColorPicker> {
       width: min(size * 2 * _colors.length, 300),
       height: size * 3,
       decoration: BoxDecoration(
-        color: AppColors.SECONDARY_DARK,
+        color: AppColor.SECONDARY_DARK,
         borderRadius: BorderRadius.circular(8),
       ),
       child: Scrollbar(

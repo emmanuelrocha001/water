@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
-import '../general/app_colors.dart';
+// colors
+import '../providers/app_color.dart';
 import '../widgets/five_day/five_day.dart';
 import '../widgets/settings/menu.dart';
 
 import '../helper.dart';
 
-class OverviewScreen extends StatelessWidget {
+class OverviewView extends StatelessWidget {
   static const routeName = '/overview';
 
   @override
   Widget build(BuildContext context) {
     final styleTheme = Theme.of(context);
     return Scaffold(
-      backgroundColor: AppColors.PRIMARY_DARK,
+      backgroundColor: AppColor.PRIMARY_DARK,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: AppColors.PRIMARY_DARK,
+        backgroundColor: AppColor.PRIMARY_DARK,
         leading: IconButton(
           icon: Icon(
             Feather.menu,

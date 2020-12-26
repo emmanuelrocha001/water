@@ -14,8 +14,8 @@ class Auth with ChangeNotifier {
   final baseUrl = 'localhost:8080';
 
   var _user;
-  String token;
-  String _initialView = '';
+  String token = '';
+  String _initialView = '/login';
 
   String get initialView {
     return _initialView;
@@ -53,11 +53,14 @@ class Auth with ChangeNotifier {
   Future<void> initial() async {
     final prefs = await SharedPreferences.getInstance();
     // check for token
-    if (prefs.containsKey('token')) {
-      token = prefs.getString('token');
-      if (prefs.containsKey('initialView')) {
-        _initialView = prefs.getString('initialView');
-      }
+    // if (prefs.containsKey('token')) {
+    //   token = prefs.getString('token');
+    //   if (prefs.containsKey('initialView')) {
+    //     _initialView = prefs.getString('initialView');
+    //   }
+    // }
+    if (prefs.containsKey('initialView')) {
+      _initialView = prefs.getString('initialView');
     }
     notifyListeners();
   }

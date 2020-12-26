@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 // import 'package:provider/provider.dart';
 import 'package:flushbar/flushbar.dart';
-import './general/app_colors.dart';
+// colors
+import './providers/app_color.dart';
 
 class Helper extends StatelessWidget {
   static void showMessage(BuildContext context, String message,
@@ -78,7 +79,7 @@ class Helper extends StatelessWidget {
           return Container(
             height: (mediaQuery.size.height - mediaQuery.padding.top),
             width: (mediaQuery.size.width),
-            color: AppColors.PRIMARY_DARK,
+            color: AppColor.PRIMARY_DARK,
             child: Scrollbar(
                 child: SingleChildScrollView(
               child: content,
